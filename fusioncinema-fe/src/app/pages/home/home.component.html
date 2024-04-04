@@ -1,0 +1,116 @@
+<section class="p-5" style="height: calc(100vh - 60px);">
+  <div class="row d-flex gap-md-0 gap-3 h-100 align-items-center">
+    <div class="col-md-7 col-12 order-md-1 order-2 d-flex flex-column justify-content-center gap-4">
+      <div class="d-flex flex-column gap-1">
+        <p class="lead">{{ translations.home.hero.welcome }}<span class="badge text-bg-light fs-6">{{ translations.nav.brand }}</span></p>
+        <h2 class="fw-semibold display-4">{{ translations.home.hero.discover }}</h2>
+        <h4 class="fw-normal fs-3">{{ translations.home.hero.experience }}</h4>
+      </div>
+      <div class="d-flex gap-3">
+        <button 
+        type="button" 
+        class="btn"
+        [class.btn-secondary]="temaOscuro" 
+        [class.btn-primary]="!temaOscuro">{{ translations.home.hero.startNow }}</button>
+        <button type="button" class="btn btn-outline-secondary">{{ translations.home.hero.discoverMore }}</button>
+      </div>
+    </div>
+    <div class="col-md-5 col-12 order-md-2 order-1">
+      <img src="../../../assets/hero-bg.webp" class="img-fluid object-fit-contain rounded-4">
+    </div>
+  </div>
+</section>
+
+<section class="p-3 py-5">
+  <h2 class="fs-2 fw-bold lh-base text-center">{{ translations.home.benefits.title }}</h2>
+  <p class="col-md-6 lead text-center m-auto">{{ translations.home.benefits.description }}</p>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="rounded-3 d-flex align-items-center justify-content-center mb-3 mt-5" 
+        style="width: 128px; height: 128px; margin: auto;"
+        [style.background-color]="temaOscuro ? '#9cb3d4' : '#3077e2'">
+          <img src="../../../assets/ben-variety.svg" class="img-fluid" style="width: 96px; height: 96px;">
+        </div>
+        <div class="card-body mb-3">
+          <h5 class="card-title">{{ translations.home.benefits.variety.title }}</h5>
+          <p class="card-text">{{ translations.home.benefits.variety.description }}</p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="rounded-3 d-flex align-items-center justify-content-center mb-3 mt-5" 
+        style="width: 128px; height: 128px; background-color: #3077e2; margin: auto;"
+        [style.background-color]="temaOscuro ? '#9cb3d4' : '#3077e2'">
+          <img src="../../../assets/ben-custom.svg" class="img-fluid" style="width: 96px; height: 96px;">
+        </div>
+        <div class="card-body mb-3">
+          <h5 class="card-title">{{ translations.home.benefits.custom.title }}</h5>
+          <p class="card-text">{{ translations.home.benefits.custom.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="rounded-3 d-flex align-items-center justify-content-center mb-3 mt-5" 
+        style="width: 128px; height: 128px; background-color: #3077e2; margin: auto;"
+        [style.background-color]="temaOscuro ? '#9cb3d4' : '#3077e2'">
+          <img src="../../../assets/ben-best-experience.svg" class="img-fluid" style="width: 96px; height: 96px;">
+        </div>
+        <div class="card-body mb-3">
+          <h5 class="card-title">{{ translations.home.benefits.experience.title }}</h5>
+          <p class="card-text">{{ translations.home.benefits.experience.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="container py-5 mt-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
+      <small class="d-block mb-3 text-body-secondary">© 2017–2024</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

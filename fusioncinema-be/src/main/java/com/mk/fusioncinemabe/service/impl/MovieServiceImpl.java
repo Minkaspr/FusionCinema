@@ -5,6 +5,8 @@ import com.mk.fusioncinemabe.error.MovieNotFoundException;
 import com.mk.fusioncinemabe.repository.MovieRepository;
 import com.mk.fusioncinemabe.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,6 +34,11 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
+    public Page<Movie> getAllMovies(Pageable pageable) {
+        return movieRepository.findAll(pageable);
+    }
+
+    @Override
     public Movie createMovie(Movie movie) {
         return movieRepository.save(movie);
     }
@@ -47,7 +54,7 @@ public class MovieServiceImpl implements MovieService {
             movieDb.setSynopsis(movie.getSynopsis());
             movieDb.setDirector(movie.getDirector());
             movieDb.setMinimumAge(movie.getMinimumAge());
-            return movieRepository.save(movie);
+            return movieRepository.save(movieDb);
         }
         return null;
     }

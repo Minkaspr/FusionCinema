@@ -20,7 +20,7 @@ public class Movie {
     private Long id;
 
     @NotBlank(message = "Ingrese el titulo")
-    @Length(min = 4, max = 10)
+    @Length(min = 4, max = 255)
     @Column(nullable = false, unique = true)
     private String title;
 

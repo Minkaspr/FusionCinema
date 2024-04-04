@@ -7,6 +7,8 @@ import com.mk.fusioncinemabe.service.MovieService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+
 @RestController
-@RequestMapping("/api/Movie")
+@RequestMapping("/api/FusionCinema")
 public class MovieController {
     @Autowired
     MovieService movieService;
@@ -36,10 +40,22 @@ public class MovieController {
         }
     }
 
-    @GetMapping("/getAllMovies")
-    public ResponseEntity<ApiResponse> getAllMovies(){
+    @GetMapping("/getAll")
+    public ResponseEntity<ApiResponse> getAll(){
         try {
             List<Movie> movies = movieService.getAll();
+            ApiResponse response = new ApiResponse(HttpStatus.OK.value(), "Operación exitosa", movies, null);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            ApiResponse response = new ApiResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Error al obtener las películas", null, e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/getAllMovies")
+    public ResponseEntity<ApiResponse> getAllMovies(Pageable pageable){
+        try {
+            Page<Movie> movies = movieService.getAllMovies(pageable);
             ApiResponse response = new ApiResponse(HttpStatus.OK.value(), "Operación exitosa", movies, null);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
@@ -113,6 +129,45 @@ public class MovieController {
     public Optional<Movie> getByTitleIc(@PathVariable String title){
         return movieService.findByTitleIgnoreCase(title);
     }
+
+    /**
+     *  Códigos de Estado HTTP
+     *
+     *  - @GetMapping("/getMovie/{id}"):
+     *      - HttpStatus.OK (200): Cuando se obtiene la película con éxito.
+     *      - HttpStatus.NOT_FOUND (404): Cuando no se encuentra la película que se intenta obtener.
+     *      - HttpStatus.INTERNAL_SERVER_ERROR (500): Cuando ocurre algún otro error al obtener la película.
+     *
+     *  - @GetMapping("/getAllMovies"):
+     *      - HttpStatus.OK (200): Cuando se obtienen todas las películas con éxito.
+     *      - HttpStatus.INTERNAL_SERVER_ERROR (500): Cuando ocurre algún otro error al obtener todas las películas.
+     *
+     *  - @PostMapping("/saveMovie"):
+     *      - HttpStatus.CREATED (201): Cuando la película se crea con éxito.
+     *      - HttpStatus.BAD_REQUEST (400): Cuando el título de la película ya existe.
+     *      - HttpStatus.INTERNAL_SERVER_ERROR (500): Cuando ocurre algún otro error durante la creación de la película.
+     *
+     *  - @PutMapping("/updateMovie/{id}"):
+     *      - HttpStatus.OK (200): Cuando la película se actualiza con éxito.
+     *      - HttpStatus.NOT_FOUND (404): Cuando no se encuentra la película que se intenta actualizar.
+     *      - HttpStatus.INTERNAL_SERVER_ERROR (500): Cuando ocurre algún otro error durante la actualización de la película.
+     *
+     *  - @DeleteMapping("/deleteMovie/{id}"):
+     *      - HttpStatus.OK (200): Cuando se elimina la película con éxito.
+     *      - HttpStatus.NOT_FOUND (404): Cuando no se encuentra la película que se intenta eliminar.
+     *      - HttpStatus.INTERNAL_SERVER_ERROR (500): Cuando ocurre algún otro error al eliminar la película.
+     *
+     *  - @GetMapping("/getMovieByTitle/{title}"):
+     *      - Este método retorna un Optional<Movie>, por lo que no se especifica un HttpStatus.
+     *
+     *  - @GetMapping("/getByTitle/{title}"):
+     *      - HttpStatus.OK (200): Cuando se encuentra la película con el título especificado.
+     *      - HttpStatus.NOT_FOUND (404): Cuando no se encuentra la película con el título especificado.
+     *
+     *  - @GetMapping("/getByTitleIc/{title}"):
+     *      - Este método retorna un Optional<Movie>, por lo que no se especifica un HttpStatus.
+     */
+
 }
 /**
  *     CRUD Sencillo

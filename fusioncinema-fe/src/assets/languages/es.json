@@ -1,0 +1,118 @@
+{
+    "nav": {
+      "brand": "Fusion Cinema",
+      "home": "Inicio",
+      "movies": "Películas",
+      "language": "Idioma",
+      "spanish": "Español",
+      "english": "Inglés"
+    },
+    "home": {
+      "hero": {
+        "welcome": "Bienvenido a ",
+        "discover": "Descubre, gestiona y disfruta de tus películas favoritas en un solo lugar.",
+        "experience": "¡Experimenta el cine como nunca antes!",
+        "startNow": "Empieza ahora",
+        "discoverMore": "Descubre más"
+      },
+      "benefits": {
+        "title": "¿Por qué elegir Fusion Cinema?",
+        "description": "Fusion Cinema no es solo una plataforma para gestionar películas, es una experiencia cinematográfica completa. Aquí te presentamos tres de nuestros beneficios más destacados:",
+        "variety": {
+          "title": "Variedad de películas",
+          "description": "Disfruta de una amplia variedad de películas de todos los géneros y épocas. Siempre hay algo nuevo para descubrir en FusionCinema."
+        },
+        "custom": {
+          "title": "Gestión personalizada",
+          "description": "Crea tu propia lista de películas favoritas, califica las películas que has visto y recibe recomendaciones personalizadas basadas en tus gustos."
+        },
+        "experience": {
+          "title": "Experiencia de usuario excepcional",
+          "description": "Nuestra plataforma es fácil de usar y está diseñada para ofrecerte la mejor experiencia de usuario. Disfruta del cine sin complicaciones."
+        }
+      },
+      "footer": {
+      }
+    },
+    "movies": {
+      "explore": {
+        "title": "Explora nuestra colección de películas",
+        "description": "En FusionCinema, nos enorgullece ofrecer una amplia variedad de películas para todos los gustos. Aquí puedes explorar todas las películas que tenemos en nuestra base de datos. Puedes editar los detalles de las películas, eliminar las que ya no necesites o buscar una película específica. ¡Disfruta explorando!"
+      },
+      "actions": {
+        "add": "Agregar",
+        "search": "Buscar",
+        "refresh": "Refrescar",
+        "edit": "Editar",
+        "details": "Detalles",
+        "delete": "Eliminar"
+      },
+      "table": {
+        "id": "ID",
+        "title": "Título",
+        "genre": "Género",
+        "releaseYear": "Año de Lanzamiento",
+        "director": "Director",
+        "operations": "Operaciones"
+      },
+      "pagination": {
+      }
+    },
+    "movieForm": {
+      "formTitle": {
+        "edit": "Editar Pelicula",
+        "add": "Agregar Pelicula"
+      },
+      "additionalText": "Complete todos los campos",
+      "formButton": {
+        "update": "Actualizar",
+        "register": "Registrar"
+      },
+      "title": {
+        "label": "Titulo:",
+        "placeholder": "Ingrese el titulo",
+        "invalid": "El título es obligatorio."
+      },
+      "director": {
+        "label": "Director:",
+        "placeholder": "Ingrese el director",
+        "invalid": "El nombre del director es obligatorio."
+      },
+      "synopsis": {
+        "label": "Sinopsis:",
+        "placeholder": "Ingrese la sinopsis",
+        "invalid": "Por favor, introduce una sinopsis."
+      },
+      "releaseYear": {
+        "label": "Año de Lanzamiento:",
+        "invalid": "El año de lanzamiento es obligatorio.",
+        "invalidFuture": "La fecha no puede ser futura."
+      },
+      "genre": {
+        "label": "Género:",
+        "placeholder": "Escribe para buscar...",
+        "invalid": "Por favor, selecciona un género."
+      },
+      "minimumAge": {
+        "label": "Apto para:",
+        "options":{
+          "text1": "Elige...",
+          "text2": "Para todas las edades"
+        },
+        "invalid": "Por favor, selecciona una clasificación."
+      },
+      "rating": {
+        "label": "Calificación:",
+        "minMax": "Mínimo: 0 - Máximo: 5"
+      }
+    },
+    "movieDetail": {
+      "director": "Director",
+      "synopsis": "Sinopsis",
+      "releaseYear": "Año de Lanzamiento",
+      "genre": "Genero",
+      "minimumAge": "Apto para",
+      "rating": "Calificacion"
+    }
+  }
+  

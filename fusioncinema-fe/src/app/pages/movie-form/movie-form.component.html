@@ -1,0 +1,178 @@
+<div class="w-100 m-5">
+  <div class="col-lg-6  mx-auto d-flex flex-column align-items-center">
+    <h4 class="text-center">
+      {{ formTitle }}
+    </h4>
+    <small class="text-body-secondary text-center">
+      {{ translations.movieForm.additionalText }}
+    </small>
+
+    <form
+      [formGroup]="movieForm"
+      class="needs-validation mt-4"
+      novalidate=""
+      (submit)="onSubmit()"
+    >
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="title" class="form-label">
+            {{ translations.movieForm.title.label }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            placeholder="{{ translations.movieForm.title.placeholder }}"
+            formControlName="title"
+            [ngClass]="{ 'is-invalid': hasErrors('title') }"
+          />
+          <div class="invalid-feedback">
+            {{ translations.movieForm.title.invalid }}
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="director" class="form-label">
+            {{ translations.movieForm.director.label }}
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="director"
+            placeholder="{{ translations.movieForm.director.placeholder }}"
+            formControlName="director"
+            [ngClass]="{ 'is-invalid': hasErrors('director') }"
+          />
+          <div class="invalid-feedback">
+            {{ translations.movieForm.director.invalid }}
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="synopsis" class="form-label">{{
+            translations.movieForm.synopsis.label
+          }}</label>
+          <textarea
+            class="form-control"
+            id="synopsis"
+            rows="3"
+            style="resize: none"
+            placeholder="{{ translations.movieForm.synopsis.placeholder }}"
+            formControlName="synopsis"
+            [ngClass]="{ 'is-invalid': hasErrors('synopsis') }"
+          ></textarea>
+          <div class="invalid-feedback">
+            {{ translations.movieForm.synopsis.invalid }}
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="col-md-4">
+          <label for="releaseYear" class="form-label">{{
+            translations.movieForm.releaseYear.label
+          }}</label>
+          <input
+            type="date"
+            class="form-control"
+            id="releaseYear"
+            formControlName="releaseYear"
+            [ngClass]="{ 'is-invalid': hasErrors('releaseYear') }"
+          />
+          <div class="invalid-feedback">
+            {{ getReleaseYearErrorMessage() }}
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="genre" class="form-label">{{
+            translations.movieForm.genre.label
+          }}</label>
+          <input
+            class="form-control"
+            list="genreOptions"
+            id="genre"
+            placeholder="{{ translations.movieForm.genre.placeholder }}"
+            formControlName="genre"
+            [ngClass]="{ 'is-invalid': hasErrors('genre') }"
+          />
+          <datalist id="genreOptions">
+            <option value="Crimen"></option>
+            <option value="Fantasía"></option>
+            <option value="Ciencia ficción"></option>
+            <option value="Animación"></option>
+            <option value="Thriller"></option>
+            <option value="Acción"></option>
+            <option value="Comedia"></option>
+            <option value="Drama"></option>
+          </datalist>
+
+          <div class="invalid-feedback">
+            {{ translations.movieForm.genre.invalid }}
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="minimumAge" class="form-label">{{
+            translations.movieForm.minimumAge.label
+          }}</label>
+          <!-- “clasificación por edades” o “clasificación de contenido” -->
+          <select
+            class="form-select"
+            id="minimumAge"
+            required=""
+            formControlName="minimumAge"
+            [ngClass]="{ 'is-invalid': hasErrors('minimumAge') }"
+          >
+            <option value="-1" disabled>
+              {{ translations.movieForm.minimumAge.options.text1 }}
+            </option>
+            <option value="0">
+              {{ translations.movieForm.minimumAge.options.text2 }}
+            </option>
+            <option value="7">+7</option>
+            <option value="12">+12</option>
+            <option value="13">+13</option>
+            <option value="16">+16</option>
+            <option value="18">+18</option>
+          </select>
+          <div class="invalid-feedback">
+            {{ translations.movieForm.minimumAge.invalid }}
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="rating" class="form-label">
+            {{ translations.movieForm.rating.label }}
+            <span class="text-body-secondary">{{ rating }}</span>
+          </label>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="5"
+            step="0.5"
+            id="rating"
+            formControlName="rating"
+            [value]="rating"
+            (change)="updateRating($event)"
+          />
+          <small class="text-body-secondary">{{
+            translations.movieForm.rating.minMax
+          }}</small>
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">
+        {{ formButton }}
+      </button>
+    </form>
+    @if (errorMessageTitle !== null && errorMessageTitle !== '') {
+    <div class="alert alert-danger my-4">
+      <strong>{{ errorMessageTitle }}</strong>
+      <p>{{ errorMessageBody }}</p>
+    </div>
+    }
+  </div>
+</div>

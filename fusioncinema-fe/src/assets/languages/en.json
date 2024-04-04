@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "brand": "Fusion Cinema",
+    "home": "Home",
+    "movies": "Movies",
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "home": {
+    "hero": {
+      "welcome": "Welcome to ",
+      "discover": "Discover, manage, and enjoy your favorite movies in one place.",
+      "experience": "Experience cinema like never before!",
+      "startNow": "Start Now",
+      "discoverMore": "Discover More"
+    },
+    "benefits": {
+      "title": "Why choose Fusion Cinema?",
+      "description": "Fusion Cinema is not just a platform to manage movies, it's a complete cinematic experience. Here are three of our most notable benefits:",
+      "variety": {
+        "title": "Variety of movies",
+        "description": "Enjoy a wide variety of movies from all genres and eras. There's always something new to discover at FusionCinema."
+      },
+      "custom": {
+        "title": "Custom management",
+        "description": "Create your own list of favorite movies, rate the movies you've seen, and receive personalized recommendations based on your tastes."
+      },
+      "experience": {
+        "title": "Exceptional user experience",
+        "description": "Our platform is easy to use and designed to offer you the best user experience. Enjoy cinema without complications."
+      }
+    },
+    "footer": {}
+  },
+  "movies": {
+    "explore": {
+      "title": "Explore our movie collection",
+      "description": "At FusionCinema, we pride ourselves on offering a wide variety of movies for all tastes. Here you can explore all the movies we have in our database. You can edit the details of the movies, delete the ones you no longer need, or search for a specific movie. Enjoy exploring!"
+    },
+    "actions": {
+      "add": "Add",
+      "search": "Search",
+      "refresh": "Refresh",
+      "edit": "Edit",
+      "details": "Details",
+      "delete": "Delete"
+    },
+    "table": {
+      "id": "ID",
+      "title": "Title",
+      "genre": "Genre",
+      "releaseYear": "Release Year",
+      "director": "Director",
+      "operations": "Operations"
+    },
+    "pagination": {}
+  },
+  "movieForm": {
+    "formTitle": {
+      "edit": "Edit Movie",
+      "add": "Add Movie"
+    },
+    "additionalText": "Complete all fields",
+    "formButton": {
+      "update": "Update",
+      "register": "Register"
+    },
+    "title": {
+      "label": "Title:",
+      "placeholder": "Enter the title",
+      "invalid": "Title is required."
+    },
+    "director": {
+      "label": "Director:",
+      "placeholder": "Enter the director's name",
+      "invalid": "Director's name is required."
+    },
+    "synopsis": {
+      "label": "Synopsis:",
+      "placeholder": "Enter the synopsis",
+      "invalid": "Please enter a synopsis."
+    },
+    "releaseYear": {
+      "label": "Release Year:",
+      "invalid": "Release year is required.",
+      "invalidFuture": "The date cannot be future."
+    },
+    "genre": {
+      "label": "Genre:",
+      "placeholder": "Type to search...",
+      "invalid": "Please select a genre."
+    },
+    "minimumAge": {
+      "label": "Suitable for:",
+      "options": {
+        "text1": "Choose...",
+        "text2": "All ages"
+      },
+      "invalid": "Please select a rating."
+    },
+    "rating": {
+      "label": "Rating:",
+      "minMax": "Minimum: 0 - Maximum: 5"
+    }
+  },
+  "movieDetail": {
+    "director": "Director",
+    "synopsis": "Synopsis",
+    "releaseYear": "Release Year",
+    "genre": "Genre",
+    "minimumAge": "Suitable for",
+    "rating": "Rating"
+  }
+}
