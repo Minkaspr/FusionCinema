@@ -54,24 +54,71 @@ Para obtener más ayuda sobre Angular CLI, usa `ng help` o consulta la página d
 
 ## Referencia de API
 
-#### Obtener todos los elementos
+#### Obtener todas las películas
 
 ```http
-  GET /api/items
+GET /api/FusionCinema/getAll
+```
+
+#### Obtener todas las películas con paginación
+
+```http
+GET /api/FusionCinema/getAllMovies?page={page}&size={size}
 ```
 
 | Parámetro | Tipo     | Descripción                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Requerido**. Tu clave de API |
+| `page` | `number	` | **Requerido**. Número de la página a obtener |
+| `size` | `number	` | **Requerido**. Cantidad de elementos por página |
 
-#### Obtener un elemento
+#### Obtener una película
 
 ```http
-  GET /api/items/${id}
+GET /api/FusionCinema/getMovie/{id}
 ```
 
 | Parámetro | Tipo     | Descripción                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Requerido**. Id del elemento a obtener |
+| `id`      | `number` | **Requerido**. Id de la película a obtener |
 
 
+#### Guardar una película
+
+```http
+POST /api/FusionCinema/saveMovie
+```
+
+| Parámetro | Tipo     | Descripción                       |
+| :-------- | :------- | :-------------------------------- |
+| `movie`      | `object` | **Requerido**. Objeto de película a guardar |
+
+#### Actualizar una película
+
+```http
+PUT /api/FusionCinema/updateMovie/{id}
+```
+
+| Parámetro | Tipo     | Descripción                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | **Requerido**. Id de la película a actualizar |
+| `movie`      | `object` | **Requerido**. Objeto de película con los datos actualizados |
+
+#### Eliminar una película
+
+```http
+DELETE /api/FusionCinema/deleteMovie/{id}
+```
+
+| Parámetro | Tipo     | Descripción                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | **Requerido**. Id de la película a eliminar |
+
+#### Obtener una película por título (ignorando mayúsculas y minúsculas)
+
+```http
+GET /api/FusionCinema/getByTitleIc/{title}
+```
+
+| Parámetro | Tipo     | Descripción                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Requerido**. Título de la película a obtener |
