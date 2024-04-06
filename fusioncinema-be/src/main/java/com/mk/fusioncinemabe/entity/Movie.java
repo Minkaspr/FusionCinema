@@ -3,6 +3,7 @@ package com.mk.fusioncinemabe.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "movie")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {

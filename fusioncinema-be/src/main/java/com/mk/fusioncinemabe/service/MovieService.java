@@ -10,8 +10,6 @@ import java.util.Optional;
 
 public interface MovieService {
     Movie getMovie(Long id) throws MovieNotFoundException;
-
-
     List<Movie> getAll();
     Page<Movie> getAllMovies(Pageable pageable);
     Movie createMovie(Movie movie);
