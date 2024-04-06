@@ -23,7 +23,7 @@
 
 La entidad `Movie` representa una película en la base de datos. Cada instancia de `Movie` contiene los siguientes campos:
 
-| Name          | Type      | Description                                                 | Validación                                                      |
+| Nombre        | Tipo      | Descripción                                                 | Validación                                                      |
 |---------------|-----------|-------------------------------------------------------------|-----------------------------------------------------------------| 
 | `id`          | Long      | Identificador único de la película.                         | Autogenerado                                                    | 
 | `title`       | String    | El título de la película.                                   | No puede estar vacío, longitud entre 4 y 255 caracteres, único. | 
